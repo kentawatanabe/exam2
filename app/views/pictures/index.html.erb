@@ -1,12 +1,7 @@
 <div class="container">
   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
     <p><%= notice %></p>
-    <%= form_for(@picture, url: pictures_path, method: :get) do |f| %>
-      <%= f.text_field :name, placeholder: "ユーザ名" %>
-      <%= f.text_field :content, placeholder:"ブログ" %>
-      <%= f.submit "検索" %>
-    <% end %>
-
+  
     <%= link_to "ブログを作成する", new_picture_path, class: 'btn btn-default' %>
     <h1>ブログ一覧</h1>
     <% @pictures.each do |picture| %>
@@ -17,7 +12,6 @@
           <%= link_to "編集", edit_picture_path(picture), class: 'btn btn-default btn-sm btn-success' %>
           <%= link_to "削除",picture_path(picture), method: :delete, data: {confirm: "本当に削除していいですか？"}, class: 'btn btn-default btn-sm btn-danger' %>
         </div>
-        <% end %>
     <% end %>
 
   </div>
