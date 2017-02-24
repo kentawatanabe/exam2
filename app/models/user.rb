@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
     user
   end
 
-  def self.create_unique_string(params, *options)
+  def self.create_unique_string
     SecureRandom.uuid
   end
 
