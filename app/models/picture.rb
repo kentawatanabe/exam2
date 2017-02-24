@@ -1,4 +1,5 @@
 class Picture < ActiveRecord::Base
+  attr_accessor :name
   belongs_to :user
   validates :content, :image, presence: true, if: :both_ok?
   mount_uploader :image, ImageUploader
@@ -6,4 +7,5 @@ class Picture < ActiveRecord::Base
   def both_ok?
    content.blank? && image.blank?
   end
+
 end
